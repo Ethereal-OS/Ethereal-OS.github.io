@@ -119,6 +119,29 @@
 
     </section><!-- /About Section -->
 
+    <!-- ROM Screenshot Showcase -->
+    <section id="rom-showcase" class="rom-showcase section">
+      <div class="container section-title" data-aos="fade-up"></div>
+      <h2 class="text-center">ROM Screenshots</h2>
+      <div class="slider-container">
+        <div class="slider">
+            <img src="assets/img/screenshot/1.png" class="slide active" alt="Screenshot 1">
+            <img src="assets/img/screenshot/2.png" class="slide" alt="Screenshot 2">
+            <img src="assets/img/screenshot/3.png" class="slide" alt="Screenshot 3">
+            <img src="assets/img/screenshot/4.png" class="slide" alt="Screenshot 4">
+            <img src="assets/img/screenshot/5.png" class="slide" alt="Screenshot 5">
+        </div>
+    </div>
+
+    <div class="dots">
+        <span class="dot active" onclick="changeSlide(0)"></span>
+        <span class="dot" onclick="changeSlide(1)"></span>
+        <span class="dot" onclick="changeSlide(2)"></span>
+        <span class="dot" onclick="changeSlide(3)"></span>
+        <span class="dot" onclick="changeSlide(4)"></span>
+    </div>
+    </section>
+
     <!-- Stats Section -->
     <section id="stats" class="stats section accent-background">
 
@@ -129,7 +152,8 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Clients</p>
+              <p>Users</p>
+              <p>Note: this is a count of users who have downloaded our ROM</p>
             </div>
           </div><!-- End Stats Item -->
 
@@ -726,6 +750,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/particles.js"></script>
+  <script src="assets/js/screenshot.js"></script>
 
 </body>
 
