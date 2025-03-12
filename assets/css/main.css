@@ -1071,6 +1071,25 @@ section,
   margin: 0;
 }
 
+.maintainership-btn {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background: #142db9; /* Change this to match your theme */
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.maintainership-btn:hover {
+  background: #f3f3f3; /* Darker shade for hover effect */
+}
+
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
