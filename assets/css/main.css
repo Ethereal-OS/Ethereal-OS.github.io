@@ -2005,3 +2005,27 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+/*--------------------------------------------------------------
+# Scroll Bar Section
+--------------------------------------------------------------*/
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust thickness */
+}
+
+/* Scrollbar Track (Background) */
+::-webkit-scrollbar-track {
+  background: #000000; /* Light gray */
+}
+
+/* Scrollbar Handle (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #8a8a8a; /* Your theme color */
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5846f9; /* Darker shade on hover */
+}
