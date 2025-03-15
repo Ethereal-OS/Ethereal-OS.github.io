@@ -991,6 +991,29 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Tagline Section
+--------------------------------------------------------------*/
+
+.tagline {
+  font-size: 24px;
+  font-weight: bold;
+}
+.dynamic-text {
+  color: #ffe600;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* Thickness of the underline */
+  text-underline-offset: 5px; /* Space between text and underline */
+  letter-spacing: 2px; /* Space between letters */
+  border-right: 2px solid #ffe600;
+  padding-right: 5px;
+  animation: blink 0.8s infinite alternate;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/*--------------------------------------------------------------
 # screenshot Section + Slider
 --------------------------------------------------------------*/
 
