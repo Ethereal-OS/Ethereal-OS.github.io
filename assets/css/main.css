@@ -994,12 +994,18 @@ section,
 # screenshot Section + Slider
 --------------------------------------------------------------*/
 
+.section-title-screenshot {
+  text-align: center;
+  padding-bottom: 100px;
+  position: relative;
+}
+
 .slider-container {
   position: relative;
   width: 280px;
   height: 580px;
   margin: auto;
-  perspective: 1200px; /* Adds 3D depth */
+  perspective: 1500px; /* Adds 3D depth */
 }
 
 .slider {
@@ -1016,15 +1022,22 @@ section,
   height: 100%;
   background-size: cover;
   backface-visibility: hidden;
+  transform-origin: center;
 }
 
-.slide:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
-.slide:nth-child(2) { transform: rotateY(90deg) translateZ(150px); }
-.slide:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
-.slide:nth-child(4) { transform: rotateY(270deg) translateZ(150px); }
+/* Distribute slides evenly around 360 degrees */
+.slide:nth-child(1) { transform: rotateY(0deg) translateZ(350px); }
+.slide:nth-child(2) { transform: rotateY(45deg) translateZ(350px); }
+.slide:nth-child(3) { transform: rotateY(90deg) translateZ(350px); }
+.slide:nth-child(4) { transform: rotateY(135deg) translateZ(350px); }
+.slide:nth-child(5) { transform: rotateY(180deg) translateZ(350px); }
+.slide:nth-child(6) { transform: rotateY(225deg) translateZ(350px); }
+.slide:nth-child(7) { transform: rotateY(270deg) translateZ(350px); }
+.slide:nth-child(8) { transform: rotateY(315deg) translateZ(350px); }
 
+/* Dots Navigation */
 .dots {
-  margin-top: 60px;
+  margin-top: 110px;
   display: flex;
   justify-content: center;
 }
@@ -1048,52 +1061,6 @@ section,
   padding-top: 0px;
   text-align: center;
   margin-top: 15px;
-}
-
-.screenshot .screenshot-item .icon {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  width: 72px;
-  height: 72px;
-  position: relative;
-  margin-right: 15px;
-  line-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-}
-
-.screenshot .screenshot-item .icon i {
-  color: var(--accent-color);
-  font-size: 32px;
-  z-index: 2;
-  position: relative;
-}
-
-.screenshot .screenshot-item .title {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-}
-
-.screenshot .screenshot-item .title a {
-  color: var(--heading-color);
-}
-
-.screenshot .screenshot-item .title a:hover {
-  color: var(--accent-color);
-}
-
-.screenshot .screenshot-item .description {
-  font-size: 14px;
-}
-
-.screenshot .screenshot-item:hover .icon {
-  background-color: var(--accent-color);
-}
-
-.screenshot .screenshot-item:hover .icon i {
-  color: var(--contrast-color);
 }
 
 .screenshot-btn {

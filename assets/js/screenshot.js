@@ -5,7 +5,7 @@ const dots = document.querySelectorAll(".dot");
 
 function changeSlide(index) {
     currentIndex = index;
-    let angle = -currentIndex * 90; // Rotate cube
+    let angle = -currentIndex * 45; // Rotate cube
     slider.style.transform = `rotateY(${angle}deg)`;
 
     // Update dot indicators
