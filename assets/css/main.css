@@ -996,38 +996,35 @@ section,
 
 .slider-container {
   position: relative;
-  width: 300px;
-  height: 650px;
+  width: 280px;
+  height: 580px;
   margin: auto;
-  perspective: 1000px;
+  perspective: 1200px; /* Adds 3D depth */
 }
 
 .slider {
-  position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
   transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
 }
 
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  opacity: 0;
-  transform: scale(0.8) translateZ(-100px);
+  background-size: cover;
+  backface-visibility: hidden;
 }
 
-.slide.active {
-  opacity: 1;
-  transform: scale(1) translateZ(0);
-}
+.slide:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
+.slide:nth-child(2) { transform: rotateY(90deg) translateZ(150px); }
+.slide:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
+.slide:nth-child(4) { transform: rotateY(270deg) translateZ(150px); }
 
 .dots {
-  margin-top: 10px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
 }
@@ -1048,7 +1045,7 @@ section,
 
 .screenshot .screenshot-item {
   position: relative;
-  padding-top: 20px;
+  padding-top: 0px;
   text-align: center;
   margin-top: 15px;
 }
