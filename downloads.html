@@ -68,6 +68,12 @@
     <!-- Service Details Section -->
     <section id="service-details" class="service-details section">
 
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by Device or Codename...">
+    </div>
+    
+    <div class="scroll-wrapper">
+
       <div class="container_phone">
           <!-- Phone Card -->
           <div class="phone-card_phone">
@@ -148,7 +154,9 @@
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h3>Changelog</h3>
             <div id="changelogContent">Loading...</div>
-        </div>
+      </div>
+    </div>
+
     </div>
 
     </section>
@@ -206,6 +214,7 @@
 
   <script src="assets/js/changelogs.js"></script>
 
+  <script src="assets/js/search.js"></script>
 
 </body>
 
