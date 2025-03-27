@@ -1,10 +1,11 @@
 // Search Functionality
 document.getElementById('searchInput').addEventListener('input', function () {
-    const filterValue = this.value.toLowerCase();
+    const filterValue = this.value.toLowerCase().trim();
     const phoneCards = document.querySelectorAll('.phone-card_phone');
-    const scrollWrapper = document.querySelector('.scroll-wrapper');
+    const container = document.querySelector('.container_phone');
     let matchedCards = 0;
 
+    // Loop through each card and check for matches
     phoneCards.forEach(card => {
         const deviceName = card.querySelector('.info-box p:nth-child(1)').innerText.toLowerCase();
         const codename = card.querySelector('.info-box p:nth-child(2)').innerText.toLowerCase();
@@ -35,30 +36,30 @@ document.getElementById('searchInput').addEventListener('input', function () {
                 margin-top: 20px;
                 font-size: 18px;
             `;
-            scrollWrapper.appendChild(noResultMsg);
+            container.insertAdjacentElement('afterend', noResultMsg);
         }
-        scrollWrapper.style.justifyContent = 'center'; // Center when no results
+        container.style.justifyContent = 'center'; // Center when no results
     } else {
         if (noResultMsg) {
             noResultMsg.remove();
         }
-        scrollWrapper.style.justifyContent = matchedCards === 1 ? 'center' : 'flex-start'; // Center single item, align left if multiple
-        resetScroll(); // Reset scroll position on new search
+        container.style.justifyContent = matchedCards === 1 || matchedCards === 2 ? 'center' : 'flex-start'; // Center for 1 or 2 cards, left for more
+        resetScroll(); // Reset scroll when new search
     }
 });
 
 // Reset Scroll when Search is Triggered
 function resetScroll() {
-    const scrollWrapper = document.querySelector('.scroll-wrapper');
-    scrollWrapper.scrollTo({ left: 0, behavior: 'smooth' });
+    const container = document.querySelector('.container_phone');
+    container.scrollTo({ left: 0, behavior: 'smooth' });
 
     // Check the number of visible cards after reset
     const visibleCards = Array.from(document.querySelectorAll('.phone-card_phone')).filter(card => card.style.display !== 'none');
     
     // Center if 1 or 2 cards are shown, otherwise justify to the left
     if (visibleCards.length === 1 || visibleCards.length === 2) {
-        scrollWrapper.style.justifyContent = 'center';
+        container.style.justifyContent = 'center';
     } else {
-        scrollWrapper.style.justifyContent = 'flex-start';
+        container.style.justifyContent = 'flex-start';
     }
 }

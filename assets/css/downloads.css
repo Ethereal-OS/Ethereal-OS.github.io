@@ -13,65 +13,38 @@
     outline: none;
 }
 
-.no-results {
-    text-align: center;
-    color: #ff4d4d;
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-/* Horizontal Scroll Wrapper */
-.scroll-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-    width: calc(3 * 310px + 90px); /* Width of 3 cards + gaps */
-    padding: 10px 0;
-    margin: 0 auto;
+.no-results-msg {
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #888 #f1f1f1; /* Firefox */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.scroll-wrapper:has(.phone-card_phone:only-child) {
-    justify-content: center; /* Center if only 1 card */
-}
-
-.scroll-wrapper:has(.phone-card_phone:nth-child(2)) {
-    justify-content: center; /* Center if only 2 cards */
-}
-
-/* For Chrome, Safari and Edge */
-.scroll-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.scroll-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.scroll-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
+/* Device Card Container */
 .container_phone {
-    display: inline-flex; /* Correct this to inline-flex */
+    display: flex;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
     gap: 45px;
-    padding: 10px 20px;
-    white-space: nowrap; /* Prevent cards from wrapping */
-    margin: 0;
-    justify-content: flex-start; /* Align items from the start */
+    max-width: 1000px; /* Increased width to fit 3 cards */
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_phone:has(.phone-card_phone[style*="display: inline-block"]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    justify-content: center;
+    align-items: center;
 }
 
 .phone-card_phone {
     width: 300px;
     height: 600px;
+    margin-top: 30px;
     background: linear-gradient(135deg, #1e272e, #1769bb); /* Dark gradient */
     border-radius: 15px; /* Rounded corners like a phone */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -192,23 +165,10 @@
     color: #000;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .container_phone {
-        grid-template-columns: 1fr; /* 1 card per row on small screens */
-        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit to screen width */
+        gap: 20px;
+        justify-content: center;
     }
-}
-
-/* Horizontal Scroll Behavior */
-.scroll-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.scroll-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.scroll-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
